@@ -6,11 +6,11 @@ import Home from "../Pages/Home/Home";
 import NotFound from "../Pages/NotFound/NotFound";
 import OurService from "../Components/Home/OurService";
 import TouristSpots from "../Pages/TouristSpots/TouristSpots";
-import EstateDetails from "../Components/Cards/EstateDetails";
 import PrivateRouter from "./PrivateRouter";
 import UserProfile from "../Pages/UserProfile/UserProfile";
 import Contact from "../Components/Home/Contact";
 import AddTouristSpot from "../Pages/UserProfile/AddTouristSpot";
+import TouristSpotDetails from "../Components/Cards/TouristSpotDetails";
 
 const router = createBrowserRouter([
   {
@@ -65,15 +65,15 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/estatedetails/:id",
+        path: "/touristspotdetails/:id",
         loader: async ({ params }) => {
           const response = await fetch(`/luxury.json`);
           const data = await response.json();
-          return data.find((estate) => estate.id === parseInt(params.id));
+          return data.find((spot) => spot.id === parseInt(params.id));
         },
         element: (
           <PrivateRouter>
-            <EstateDetails />
+            <TouristSpotDetails />
           </PrivateRouter>
         ),
       },

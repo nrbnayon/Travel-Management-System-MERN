@@ -1,5 +1,5 @@
 import { useLoaderData, useNavigation } from "react-router-dom";
-import LoaderSpinner from "./../LoaderSpinner/LoaderSpinner";
+import LoaderSpinner from "../LoaderSpinner/LoaderSpinner";
 import "animate.css";
 import { FaShieldHeart } from "react-icons/fa6";
 import { HiHomeModern } from "react-icons/hi2";
@@ -26,7 +26,7 @@ import { Icon } from "leaflet";
 import { MdAddIcCall, MdEmail, MdOutlineMessage } from "react-icons/md";
 import { TbWorldWww } from "react-icons/tb";
 
-const EstateDetails = () => {
+const TouristSpotDetails = () => {
   const villa = useLoaderData();
   const navigation = useNavigation();
 
@@ -396,4 +396,4 @@ const EstateDetails = () => {
   );
 };
 
-export default EstateDetails;
+export default TouristSpotDetails;

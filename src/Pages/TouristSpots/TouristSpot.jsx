@@ -180,7 +180,10 @@ const Spot = ({ spot }) => {
           data-aos-easing="ease-out-cubic"
           data-aos-duration="1000"
         >
-          <Link to={`/estatedetails/${parseInt(id)}`} state={spot.estate_title}>
+          <Link
+            to={`/touristspotdetails/${parseInt(id)}`}
+            state={spot.estate_title}
+          >
             <button className="btn btn-outline w-full border-primary uppercase">
               View Property
             </button>

@@ -22,7 +22,7 @@ function AddTouristSpot() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add code to handle form submission
+    console.log(formData);
   };
 
   return (
@@ -48,6 +48,8 @@ function AddTouristSpot() {
               id="image"
               type="text"
               name="image"
+              pattern="https?://.+"
+              title="Please enter a valid URL"
               value={formData.image}
               onChange={handleChange}
             />
@@ -76,16 +78,24 @@ function AddTouristSpot() {
             >
               Country Name:
             </label>
-            <input
-              required
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="country_Name"
-              type="text"
+            <select
               name="country_Name"
-              value={formData.country_Name}
+              className="md:w-[80%] mx-auto px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500 dropdown-select"
+              defaultValue={formData.country_Name}
               onChange={handleChange}
-            />
+            >
+              <option value="" hidden>
+                Select Country
+              </option>
+              <option value="France">France</option>
+              <option value="Italy">Italy</option>
+              <option value="Spain">Spain</option>
+              <option value="England">England</option>
+              <option value="Netherlands">Netherlands</option>
+              <option value="Switzerland">Switzerland</option>
+            </select>
           </div>
+
           <div className="mb-4 col-span-2 md:col-span-1">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -143,28 +153,33 @@ function AddTouristSpot() {
             >
               Seasonality:
             </label>
-            <input
-              required
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="seasonality"
-              type="text"
+            <select
               name="seasonality"
-              value={formData.seasonality}
+              className="md:w-[80%] mx-auto px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500 dropdown-select"
+              defaultValue={formData.seasonality}
               onChange={handleChange}
-            />
+            >
+              <option value="" hidden>
+                Select Seasonality
+              </option>
+              <option value="Summer">Summer</option>
+              <option value="Winter">Winter</option>
+            </select>
           </div>
+
           <div className="mb-4 col-span-2 md:col-span-1">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="travel_time"
             >
-              Travel Time:
+              Travel Time/Day:
             </label>
             <input
               required
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="travel_time"
-              type="text"
+              type="number"
+              min="0"
               name="travel_time"
               value={formData.travel_time}
               onChange={handleChange}
@@ -181,7 +196,7 @@ function AddTouristSpot() {
               required
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="totalVisitorsPerYear"
-              type="number"
+              type="text"
               min="0"
               name="totalVisitorsPerYear"
               value={formData.totalVisitorsPerYear}
