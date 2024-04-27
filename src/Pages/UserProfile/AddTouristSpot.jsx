@@ -181,7 +181,8 @@ function AddTouristSpot() {
               required
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="totalVisitorsPerYear"
-              type="text"
+              type="number"
+              min="0"
               name="totalVisitorsPerYear"
               value={formData.totalVisitorsPerYear}
               onChange={handleChange}

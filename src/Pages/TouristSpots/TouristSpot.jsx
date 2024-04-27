@@ -8,7 +8,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import LoaderSpinner from "../../Components/LoaderSpinner/LoaderSpinner";
 
-const Villa = ({ villa }) => {
+const Spot = ({ spot }) => {
   const navigation = useNavigation();
   useEffect(() => {
     AOS.init();
@@ -23,8 +23,8 @@ const Villa = ({ villa }) => {
     location,
     image,
     status,
-  } = villa;
-  if (navigation.state === "loading" || !villa) {
+  } = spot;
+  if (navigation.state === "loading" || !spot) {
     return <LoaderSpinner />;
   }
   return (
@@ -39,7 +39,7 @@ const Villa = ({ villa }) => {
             role="presentation"
             className=" w-full rounded-md h-44 dark:bg-gray-500"
             src={image}
-            alt="villa img"
+            alt="spot img"
           />
           <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " />
           <p className="absolute top-1 left-2 bg-white text-black px-2 py-1 rounded-md uppercase">
@@ -88,7 +88,7 @@ const Villa = ({ villa }) => {
           data-aos-delay="400"
           data-aos-duration="1000"
         >
-          <Tooltip content={villa.price}>
+          <Tooltip content={spot.price}>
             <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -180,10 +180,7 @@ const Villa = ({ villa }) => {
           data-aos-easing="ease-out-cubic"
           data-aos-duration="1000"
         >
-          <Link
-            to={`/estatedetails/${parseInt(id)}`}
-            state={villa.estate_title}
-          >
+          <Link to={`/estatedetails/${parseInt(id)}`} state={spot.estate_title}>
             <button className="btn btn-outline w-full border-primary uppercase">
               View Property
             </button>
@@ -194,8 +191,8 @@ const Villa = ({ villa }) => {
   );
 };
 
-Villa.propTypes = {
-  villa: PropTypes.object.isRequired,
+Spot.propTypes = {
+  spot: PropTypes.object.isRequired,
 };
 
-export default Villa;
+export default Spot;

@@ -77,10 +77,10 @@ export default function BannerSlider() {
       </Swiper>
       <div className="absolute text-white inset-0 flex items-center justify-center w-full h-full  z-10">
         <div className="mx-auto  p-5 rounded-lg">
-          <h3 className="text-center text-xl md:text-4xl lg:text-6xl font-bold uppercase">
+          <h3 className="text-center text-lg md:text-3xl lg:text-5xl font-bold uppercase">
             Explore Your Destination
           </h3>
-          <p className="text-black">
+          <p className="text-black w-[90%] text-center mx-auto text-sm md:text-xl">
             Plan your dream vacation with Euro Travel. Discover new horizons and
             create lasting memories with our curated travel experiences.
           </p>
@@ -103,9 +103,10 @@ export default function BannerSlider() {
                 </label>
                 <select
                   name="dropdown"
-                  className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500 dropdown-select"
+                  className="md:w-[80%] mx-auto px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500 dropdown-select"
+                  defaultValue="Select Country"
                 >
-                  <option value="" disabled selected hidden>
+                  <option value="Select Country" hidden>
                     Select Country
                   </option>
                   <option value="France">France</option>
@@ -117,9 +118,9 @@ export default function BannerSlider() {
                 </select>
               </div>
               <div className="w-full mt-6">
-                <button className=" md:ml-4 w-full btn btn-info rounded-lg ">
+                <button className="w-full btn btn-info rounded-lg ">
                   <FaMapLocationDot />
-                  Find Here
+                  BOOK NOW
                 </button>
               </div>
             </div>

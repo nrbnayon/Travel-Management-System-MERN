@@ -44,12 +44,12 @@ const NavBar = () => {
       </li>
       <li>
         <NavLink
-          to="/estatevillas"
+          to="/touristspots"
           className={({ isActive }) =>
             isActive ? "text-primary border border-primary" : "font-bold"
           }
         >
-          ALL TOURISTS SPORT
+          ALL TOURISTS SPOTS
         </NavLink>
       </li>
       <li>
@@ -59,7 +59,7 @@ const NavBar = () => {
             isActive ? "text-primary border border-primary" : "font-bold"
           }
         >
-          ADD TOURISTS SPORT
+          ADD TOURISTS SPOTS
         </NavLink>
       </li>
       <li>

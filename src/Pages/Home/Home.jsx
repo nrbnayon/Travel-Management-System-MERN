@@ -10,7 +10,6 @@ import OurService from "../../Components/Home/OurService";
 import AboutUs from "../AboutUs/AboutUs";
 import ContactForm from "../ContactForm/ContactForm";
 import EpecialOffer from "../../Components/Cards/EpecialOffer";
-import Options from "../../Components/BannerSlider/Options";
 
 const Home = () => {
   useEffect(() => {
@@ -48,10 +47,20 @@ const Home = () => {
       >
         <EpecialOffer spots={spots} />
       </div>
-      <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+      <div
+        data-aos="fade-up"
+        data-aos-delay="200"
+        data-aos-duration="1000"
+        className="my-4"
+      >
         <Description />
       </div>
-      <div data-aos="zoom-in" data-aos-delay="700" data-aos-duration="1000">
+      <div
+        data-aos="zoom-in"
+        data-aos-delay="700"
+        data-aos-duration="1000"
+        className="my-4"
+      >
         <PopularSpots spots={spots} />
       </div>
       <div data-aos="fade-left" data-aos-delay="400" data-aos-duration="1000">

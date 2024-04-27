@@ -28,7 +28,7 @@ const EpecialOffer = ({ spots }) => {
   return (
     <>
       <section>
-        <div className="text-right py-4 space-y-6 my-4 bg-blue-gray-50 rounded-md ">
+        <div className="text-right py-4 space-y-6 my-4 bg-blue-gray-50 rounded-md px-4">
           <h3 className="text-2xl lg:text-4xl text-[#172432] font-black">
             <span className="bg-gradient-to-r from-light-blue-800 via-purple-600 to-green-400 text-transparent bg-clip-text bg-300%  animate-gradient">
               Special Offer
@@ -121,8 +121,8 @@ const EpecialOffer = ({ spots }) => {
                 <Typography color="gray" className="text-xs md:text-xl">
                   {spot.description.slice(0, 100)}...
                 </Typography>
-                <div className="bg-gray-100 p-6 rounded-lg shadow-md flex items-center justify-between">
-                  <div className="flex items-center">
+                <div className="bg-gray-100 p-6 rounded-lg shadow-md flex  items-center justify-between">
+                  <div className="flex items-center flex-col md:flex-row">
                     <p className="text-lg font-bold text-gray-800 mr-4">
                       Price:<del className="text-red-600">{spot.price}</del>
                     </p>
