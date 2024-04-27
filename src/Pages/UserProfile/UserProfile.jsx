@@ -51,7 +51,7 @@ const UserProfile = () => {
                 value={
                   user?.email
                     ? user?.email
-                    : "Your are login using Google or Github Account"
+                    : "Google or Github Account Gmail for Security Purpose"
                 }
                 disabled
               />

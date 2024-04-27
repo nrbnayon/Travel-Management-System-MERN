@@ -14,59 +14,74 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
 
-    const form = new FormData(e.currentTarget);
-    const username = form.get("username");
-    const photourl = form.get("photourl");
-    const email = form.get("email");
-    let password = form.get("password").trim();
-    let cpassword = form.get("cpassword").trim();
-    const terms = e.target.terms.checked;
-    setError("");
-    if (!username) {
-      setError("Username is required.");
-      return;
-    }
-    if (!photourl) {
-      setError("Photo URL is required.");
-      return;
-    }
-    if (!email) {
-      setError("Email is required.");
-      return;
-    } else {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-        setError("Invalid email format.");
-      }
-    }
-    if (password !== cpassword) {
-      setError("Passwords do not match");
-      return;
-    } else if (password.length < 6) {
-      setError("Passwords should be at least 6 characters");
-      return;
-    } else if (!/[A-Z]/.test(password) || !/[a-z]/.test(password)) {
-      setError(
-        "Password Should need At least one uppercase and one lowercase letter."
-      );
-      return;
-    }
-    if (!terms) {
-      setError("Need to accept our terms and condition");
-      return;
-    }
+    const formData = new FormData(e.currentTarget);
+    const username = formData.get("username");
+    const photourl = formData.get("photourl");
+    const email = formData.get("email");
+    let password = formData.get("password").trim();
+    let cpassword = formData.get("cpassword").trim();
+    const terms = formData.get("terms") === "on";
+
     try {
+      setError(null);
+
+      if (!username || !photourl || !email || !password || !cpassword) {
+        throw new Error("All fields are required.");
+      }
+
+      if (!isValidEmail(email)) {
+        throw new Error("Invalid email format.");
+      }
+
+      if (password !== cpassword) {
+        throw new Error("Passwords do not match.");
+      }
+
+      if (
+        password.length < 6 ||
+        !/[A-Z]/.test(password) ||
+        !/[a-z]/.test(password)
+      ) {
+        throw new Error(
+          "Password should be at least 6 characters long and contain at least one uppercase and one lowercase letter."
+        );
+      }
+
+      if (!terms) {
+        throw new Error("You must accept the terms and conditions.");
+      }
+
       const result = await createUser(email, password);
       await updateProfile(result.user, {
         displayName: username,
         photoURL: photourl,
       });
-      toast.success("Register  Successful");
+
+      const user = { username, email, photourl };
+      const response = await fetch("http://localhost:3000/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to register user.");
+      }
+
+      toast.success("Registration successful!");
       navigate("/");
     } catch (error) {
       setError(error.message);
     }
   };
+
+  const isValidEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   return (
     <div className="hero min-h-screen bg-base-300 rounded-xl">
       <div className="card w-full md:w-2/3 lg:w-1/2 mx-auto shadow-lg bg-base-200">

@@ -50,6 +50,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/userprofile",
+        loader: () => fetch("http://localhost:3000/users"),
         element: (
           <PrivateRouter>
             <UserProfile />

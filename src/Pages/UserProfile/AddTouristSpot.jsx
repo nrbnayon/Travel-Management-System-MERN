@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 function AddTouristSpot() {
+  const { user } = useContext(AuthContext);
   const [formData, setFormData] = useState({
     image: "",
     tourists_spot_name: "",
@@ -11,8 +13,12 @@ function AddTouristSpot() {
     seasonality: "",
     travel_time: "",
     totalVisitorsPerYear: "",
-    userEmail: "",
-    userName: "",
+    userEmail: `${
+      user?.email
+        ? user?.email
+        : "Google or Github Account Gmail for Security Purpose"
+    }`,
+    userName: `${user?.displayName}`,
   });
 
   const handleChange = (e) => {
@@ -24,7 +30,6 @@ function AddTouristSpot() {
     e.preventDefault();
     console.log(formData);
   };
-
   return (
     <div className="flex justify-center items-center min-h-[calc(100vh-50px)] my-6 overflow-x-hidden bg-gray-200">
       <div className="bg-white shadow-md rounded px-2 md:px-8 pt-6 pb-8 mb-4  md:w-[80%] mx-auto w-full">
@@ -203,23 +208,7 @@ function AddTouristSpot() {
               onChange={handleChange}
             />
           </div>
-          <div className="mb-4 col-span-2 md:col-span-1">
-            <label
-              className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="userEmail"
-            >
-              User Email:
-            </label>
-            <input
-              required
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="userEmail"
-              type="email"
-              name="userEmail"
-              value={formData.userEmail}
-              onChange={handleChange}
-            />
-          </div>
+
           <div className="mb-4 col-span-2 md:col-span-1">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -234,6 +223,25 @@ function AddTouristSpot() {
               type="text"
               name="userName"
               value={formData.userName}
+              onChange={handleChange}
+              disabled
+            />
+          </div>
+          <div className="mb-4 col-span-2 md:col-span-1">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="userEmail"
+            >
+              User Email:
+            </label>
+            <input
+              required
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="userEmail"
+              type="email"
+              name="userEmail"
+              value={formData.userEmail}
+              disabled
               onChange={handleChange}
             />
           </div>
