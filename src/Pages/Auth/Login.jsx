@@ -52,8 +52,6 @@ const Login = () => {
   const handleGoogleSignIn = () => {
     loginWithGoogle()
       .then(() => {
-        // const newUser = result.user;
-        // setGoogleLoginUser(newUser);
         navigate(location?.state ? location.state : "/");
         toast.success("Google Login Successfully");
       })
@@ -65,8 +63,6 @@ const Login = () => {
   const handleGithubSignIn = () => {
     loginWithGithub()
       .then(() => {
-        // const newUser = result.user;
-
         navigate(location?.state ? location.state : "/");
         toast.success("GitHub Login successful!");
       })
@@ -76,14 +72,14 @@ const Login = () => {
   };
 
   const handleFacebookLogin = () => {
-    setLoginError("OOPS! Not Build Yet. Please try others way");
+    setLoginError("Build on processing");
   };
   return (
-    <div className="hero min-h-[calc(100vh-100px)] bg-[url('/bg1.png')]  rounded-xl">
-      <div className="card w-full md:w-2/3 lg:w-1/2 mx-auto shadow-lg bg-base-200 opacity-90 my-4 md:my-10">
+    <div className="hero min-h-[calc(100vh-100px)] bg-[url('/7.png')]  rounded-xl">
+      <div className="card w-full md:w-2/3 lg:w-1/2 mx-auto shadow-lg bg-base-200 opacity-90">
         <form onSubmit={handleLogin} className="card-body">
           <h1 className="text-xl text-center md:text-3xl font-bold">
-            Login Your Profile
+            Please Login Your Profile
           </h1>
           <div className="form-control">
             <label className="label">
@@ -141,7 +137,7 @@ const Login = () => {
           <h3 className="text-center text-2xl font-bold text-secondary mb-2">
             Continue with{" "}
           </h3>
-          <div className="md:flex w-full mx-auto justify-between px-1">
+          <div className="md:flex w-full mx-auto justify-between items-center px-1 space-y-3">
             <button
               onClick={handleGithubSignIn}
               className="btn btn-primary w-full md:w-32 flex items-center justify-center bg-gray-800 hover:bg-gray-700 text-white"
@@ -150,18 +146,18 @@ const Login = () => {
               GitHub
             </button>
             <button
-              onClick={handleGoogleSignIn}
-              className="btn btn-primary w-full md:w-32 flex items-center justify-center bg-indigo-500 hover:bg-cyan-400 text-white"
-            >
-              <FcGoogle className="mr-1" />
-              Google
-            </button>
-            <button
               onClick={handleFacebookLogin}
               className="btn btn-primary w-full md:w-32 flex items-center justify-center bg-blue-600 hover:bg-blue-500 text-white"
             >
               <FaFacebook className="mr-1" />
               Facebook
+            </button>
+            <button
+              onClick={handleGoogleSignIn}
+              className="btn btn-primary w-full md:w-32 flex items-center justify-center bg-indigo-500 hover:bg-cyan-400 text-white"
+            >
+              <FcGoogle className="mr-1" />
+              Google
             </button>
           </div>
         </form>

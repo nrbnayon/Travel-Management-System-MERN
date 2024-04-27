@@ -1,25 +1,16 @@
-import FooterLogo from "/logo.png";
+import Fimg from "/lgm.png";
 const Footer = () => {
   return (
-    <div className="py-4 md:py-10 bg-[#DFE3E7] mt-6 z-10">
-      <footer className="px-4 divide-y text-gray-800 container mx-auto">
+    <div className="py-4 md:py-10 bg-[#DFE3E7]  mt-6 z-10">
+      <footer className="px-4 divide-y text-gray-800  container mx-auto">
         <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
           <div className="lg:w-1/3">
             <a
               rel="noopener noreferrer"
               href="#"
-              className="flex justify-center space-x-3 lg:justify-start"
+              className="flex justify-center items-center space-x-3 lg:justify-start"
             >
-              <div className="flex items-center justify-center w-12 h-12 rounded-full dark:bg-violet-600">
-                <img
-                  src={FooterLogo}
-                  alt="FooterLogo"
-                  className=" rounded-full"
-                />
-              </div>
-              <span className="self-center text-2xl font-semibold">
-                Euro Travel
-              </span>
+              <img src={Fimg} className="w-full" />
             </a>
           </div>
           <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
@@ -139,7 +130,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="py-6 text-sm text-center dark:text-gray-600">
-          © 2024 Luxury Rentals. All rights reserved.
+          © 2024 Euro Travel. All rights reserved.
         </div>
       </footer>
     </div>

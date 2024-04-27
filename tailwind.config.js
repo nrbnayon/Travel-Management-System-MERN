@@ -6,7 +6,7 @@ export default withMT({
   theme: {
     extend: {
       fontFamily: {
-        raleway: "'Blinker', sans-serif;",
+        raleway: "'Raleway', sans-serif;",
       },
       keyframes: {
         animatedgradient: {
@@ -25,6 +25,6 @@ export default withMT({
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["light", "dirk"],
+    themes: ["light", "dark"],
   },
 });
