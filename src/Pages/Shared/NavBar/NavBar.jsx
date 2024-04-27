@@ -54,7 +54,7 @@ const NavBar = () => {
       </li>
       <li>
         <NavLink
-          to="/updateprofile"
+          to="/addtouristspot"
           className={({ isActive }) =>
             isActive ? "text-primary border border-primary" : "font-bold"
           }

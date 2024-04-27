@@ -8,9 +8,9 @@ import OurService from "../Components/Home/OurService";
 import Villas from "../Pages/EstateVillas/EstateVillas";
 import EstateDetails from "../Components/Cards/EstateDetails";
 import PrivateRouter from "./PrivateRouter";
-import UpdateProfile from "../Pages/UserProfile/UpdateProfile";
 import UserProfile from "../Pages/UserProfile/UserProfile";
 import Contact from "../Components/Home/Contact";
+import AddTouristSpot from "../Pages/UserProfile/AddTouristSpot";
 
 const router = createBrowserRouter([
   {
@@ -41,10 +41,10 @@ const router = createBrowserRouter([
         element: <OurService />,
       },
       {
-        path: "/updateprofile",
+        path: "/addtouristspot",
         element: (
           <PrivateRouter>
-            <UpdateProfile />
+            <AddTouristSpot />
           </PrivateRouter>
         ),
       },
