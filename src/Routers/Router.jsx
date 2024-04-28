@@ -26,7 +26,7 @@ const router = createBrowserRouter([
       {
         path: "/touristspots",
         element: <TouristSpots />,
-        loader: () => fetch("/luxury.json"),
+        loader: () => fetch("http://localhost:3000/spots"),
       },
       {
         path: "/login",
@@ -67,11 +67,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/touristspotdetails/:id",
-        loader: async ({ params }) => {
-          const response = await fetch(`/luxury.json`);
-          const data = await response.json();
-          return data.find((spot) => spot.id === parseInt(params.id));
-        },
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/spots/${params.id}`),
         element: (
           <PrivateRouter>
             <TouristSpotDetails />

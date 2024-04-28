@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { toast } from "react-toastify";
 
 function AddTouristSpot() {
   const { user } = useContext(AuthContext);
@@ -19,6 +20,8 @@ function AddTouristSpot() {
         : "Google or Github Account Gmail for Security Purpose"
     }`,
     userName: `${user?.displayName}`,
+    latitude: `${Math.random() * 180 - 90}`,
+    longitude: `${Math.random() * 360 - 180}`,
   });
 
   const handleChange = (e) => {
@@ -26,10 +29,48 @@ function AddTouristSpot() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
+
+    try {
+      const response = await fetch("http://localhost:3000/spots", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to post data.");
+      }
+
+      toast.success("Post successful!");
+
+      setFormData({
+        image: "",
+        tourists_spot_name: "",
+        country_Name: "",
+        location: "",
+        short_description: "",
+        average_cost: "",
+        seasonality: "",
+        travel_time: "",
+        totalVisitorsPerYear: "",
+        userEmail: `${
+          user?.email
+            ? user?.email
+            : "Google or Github Account Gmail for Security Purpose"
+        }`,
+        userName: `${user?.displayName}`,
+      });
+    } catch (error) {
+      console.error("Error posting data:", error);
+      toast.error("Failed to post data.");
+    }
   };
+
   return (
     <div className="flex justify-center items-center min-h-[calc(100vh-50px)] my-6 overflow-x-hidden bg-gray-200">
       <div className="bg-white shadow-md rounded px-2 md:px-8 pt-6 pb-8 mb-4  md:w-[80%] mx-auto w-full">
