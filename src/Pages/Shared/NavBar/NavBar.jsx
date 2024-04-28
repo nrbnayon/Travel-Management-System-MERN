@@ -64,7 +64,7 @@ const NavBar = () => {
       </li>
       <li>
         <NavLink
-          to="/userprofile"
+          to="/mylist"
           className={({ isActive }) =>
             isActive ? "text-primary border border-primary" : "font-bold"
           }

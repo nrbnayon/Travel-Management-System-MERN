@@ -64,7 +64,7 @@ const EpecialOffer = ({ spots }) => {
         className="mySwiper swipers overflow-y-hidden"
       >
         {spots.map((spot) => (
-          <SwiperSlide key={spot.id} className="swiper-slides">
+          <SwiperSlide key={spot._id} className="swiper-slides">
             <Card className="w-full shadow-lg">
               <CardHeader floated={false} color="blue-gray">
                 <div className="h-72 w-full overflow-hidden">
@@ -89,7 +89,7 @@ const EpecialOffer = ({ spots }) => {
               </CardHeader>
               <CardBody>
                 <p className="flex items-center gap-1 font-bold text-xs">
-                  <GrMapLocation /> {spot.location}
+                  <GrMapLocation /> {spot.location}, {spot.country_Name}
                 </p>
                 <div className="mb-3 flex items-center justify-between">
                   <Typography
@@ -97,45 +97,51 @@ const EpecialOffer = ({ spots }) => {
                     color="blue-gray"
                     className="font-semibold text-sm md:text-2xl "
                   >
-                    {spot.estate_title}
+                    {spot.tourists_spot_name}
                   </Typography>
                   <Typography
                     color="blue-gray"
                     className="flex items-center gap-1.5 font-normal"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      className="-mt-0.5 h-5 w-5 text-yellow-700"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                    5.0
+                    Visit In {spot.travel_time} Days
                   </Typography>
                 </div>
                 <Typography color="gray" className="text-xs md:text-xl">
-                  {spot.description.slice(0, 100)}...
+                  {spot.short_description.slice(0, 100)}...
                 </Typography>
                 <div className="bg-gray-100 p-6 rounded-lg shadow-md flex  items-center justify-between">
-                  <div className="flex items-center flex-col md:flex-row">
-                    <p className="text-lg font-bold text-gray-800 mr-4">
-                      Price:<del className="text-red-600">{spot.price}</del>
-                    </p>
-                    <p className="text-lg font-bold text-gray-800">
-                      Discount: <span className="text-green-600">20%</span>
-                    </p>
+                  <div className="flex flex-col md:flex-row">
+                    <div className="md:mr-8">
+                      <p className="text-lg font-bold text-gray-800">
+                        Average Cost:
+                        <del className="text-red-600">
+                          {" "}
+                          ${spot.average_cost}
+                        </del>
+                      </p>
+                      <p className="text-lg font-bold text-gray-800">
+                        Discount:
+                        <span className="text-green-600"> 20%</span>
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-lg font-bold text-gray-800">
+                        Per Year Views: {spot.totalVisitorsPerYear}
+                      </p>
+                      <p className="text-lg font-bold text-gray-800">
+                        Popular Season:
+                        <span className="text-green-600">
+                          {spot.seasonality}
+                        </span>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </CardBody>
               <CardFooter className="pt-0">
                 <Link
-                  to={`/estatedetails/${parseInt(spot.id)}`}
-                  state={spot.estate_title}
+                  to={`/touristspotdetails/${spot._id}`}
+                  state={spot.tourists_spot_name}
                 >
                   <Button size="lg" fullWidth={true}>
                     View Details

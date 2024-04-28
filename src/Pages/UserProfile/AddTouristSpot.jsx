@@ -22,6 +22,7 @@ function AddTouristSpot() {
     userName: `${user?.displayName}`,
     latitude: `${Math.random() * 180 - 90}`,
     longitude: `${Math.random() * 360 - 180}`,
+    photoUrl: `${user?.photoURL}`,
   });
 
   const handleChange = (e) => {
@@ -31,7 +32,6 @@ function AddTouristSpot() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
 
     try {
       const response = await fetch("http://localhost:3000/spots", {

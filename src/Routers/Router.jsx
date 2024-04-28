@@ -7,7 +7,7 @@ import NotFound from "../Pages/NotFound/NotFound";
 import OurService from "../Components/Home/OurService";
 import TouristSpots from "../Pages/TouristSpots/TouristSpots";
 import PrivateRouter from "./PrivateRouter";
-import UserProfile from "../Pages/UserProfile/UserProfile";
+import UserProfile from "../Pages/UserProfile/MyList";
 import Contact from "../Components/Home/Contact";
 import AddTouristSpot from "../Pages/UserProfile/AddTouristSpot";
 import TouristSpotDetails from "../Components/Cards/TouristSpotDetails";
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("/luxury.json"),
+        loader: () => fetch("http://localhost:3000/spots"),
       },
       {
         path: "/touristspots",
@@ -49,8 +49,8 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/userprofile",
-        loader: () => fetch("http://localhost:3000/users"),
+        path: "/mylist",
+        loader: () => fetch("http://localhost:3000/spots"),
         element: (
           <PrivateRouter>
             <UserProfile />

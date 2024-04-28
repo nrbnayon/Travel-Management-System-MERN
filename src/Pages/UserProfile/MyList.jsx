@@ -1,0 +1,76 @@
+import { useState, useContext, useEffect } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
+import { Link, useLoaderData } from "react-router-dom";
+import { FiEdit, FiTrash2 } from "react-icons/fi";
+import { MdRemoveRedEye } from "react-icons/md";
+
+const UserProfile = () => {
+  const spotsData = useLoaderData();
+  console.log(spotsData);
+  const { user } = useContext(AuthContext);
+  const [filteredSpots, setFilteredSpots] = useState([]);
+
+  useEffect(() => {
+    const filteredData = spotsData.filter(
+      (spot) =>
+        spot.userName === user.displayName && spot.photoUrl === user.photoURL
+    );
+    setFilteredSpots(filteredData);
+  }, [spotsData, user]);
+  console.log(filteredSpots);
+  return (
+    <div className="w-full min-h-[calc(100vh-120px)] rounded-xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+        {filteredSpots.map((spot) => (
+          <div
+            key={spot._id}
+            className="card flex-col md:flex-row card-side bg-base-100 shadow-xl"
+          >
+            <div className="md:w-1/2">
+              <img
+                src={spot.image}
+                alt="Spot"
+                className="min-w-full h-full rounded-t-xl"
+              />
+            </div>
+            <div className="md:w-1/2">
+              <div className="card-body">
+                <h2 className="card-title">
+                  {spot.tourists_spot_name}, {spot.country_Name}
+                </h2>
+                <p>{spot.short_description.slice(0, 50)}...</p>
+                <p>Average Cost: {spot.average_cost}</p>
+                <Link
+                  to={`/touristspotdetails/${spot._id}`}
+                  className="relative inline-block text-lg group mr-2"
+                >
+                  <span className="relative text-center z-10 block px-5 py-3 overflow-hidden font-bold leading-tight text-black transition-colors duration-300 ease-out border-2 border-secondary rounded-lg group-hover:text-white">
+                    <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gray-50"></span>
+                    <span className="absolute left-0 w-full h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-primary group-hover:-rotate-180 ease"></span>
+                    <span className="relative flex justify-center items-center">
+                      <MdRemoveRedEye /> VIEW
+                    </span>
+                  </span>
+                  <span
+                    className="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-primary rounded-lg group-hover:mb-0 group-hover:mr-0"
+                    data-rounded="rounded-lg"
+                  ></span>
+                </Link>
+                <Link className="text-lg w-full btn border-secondary group mr-2 flex justify-center items-center">
+                  <FiEdit />
+                  UPDATE
+                </Link>
+                <Link className="text-lg w-full btn btn-warning border-secondary group mr-2 flex justify-center items-center">
+                  <FiTrash2 DELETE />
+                  UPDATE
+                </Link>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default UserProfile;

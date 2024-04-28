@@ -32,7 +32,7 @@ const TouristSpotDetails = () => {
     latitude,
     longitude,
   } = spot || {};
-  console.log(latitude, longitude);
+
   const customIcon = new Icon({
     iconUrl: `${image}`,
     iconSize: [38, 38],
@@ -52,7 +52,7 @@ const TouristSpotDetails = () => {
     <div className="overflow-x-hidden overflow-y-hidden">
       <section className=" dark:bg-gray-100 dark:text-gray-900">
         <div className="container">
-          <div className="relative w-full col-span-2 row-span-2 rounded shadow-sm h-[500px] dark:bg-gray-500 aspect-square animate__animated animate__pulse animate__delay-2.5s animate__duration-1.5s">
+          <div className="relative w-full col-span-2 row-span-2 rounded shadow-sm h-[300px] md:h-[500px] dark:bg-gray-500 aspect-square animate__animated animate__pulse animate__delay-2.5s animate__duration-1.5s">
             <img
               src={image}
               alt="spot"
@@ -121,10 +121,10 @@ const TouristSpotDetails = () => {
                   <MdAddIcCall /> Phone : 00000000000
                 </p>
                 <p className="flex items-center gap-1">
-                  <MdEmail /> Email : luxury@gmail.com
+                  <MdEmail /> Email : eurotravel@gmail.com
                 </p>
                 <p className="flex items-center gap-1">
-                  <TbWorldWww /> www.luxuryrentals.com
+                  <TbWorldWww /> www.eurotravel.com
                 </p>
                 <p>Preferred contact method: Email: Languages: Any</p>
               </div>
