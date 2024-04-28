@@ -12,8 +12,8 @@ const Root = () => {
     if (location.pathname === "/") {
       setPageTitle("Euro Travel - HOME");
     } else if (
-      location.state === "/userprofile" ||
-      location.state === "/updateprofile" ||
+      location.state === "/addtouristspot" ||
+      location.state === "/mylist" ||
       location.state === "/contact"
     ) {
       setPageTitle("Euro Travel - Login");
