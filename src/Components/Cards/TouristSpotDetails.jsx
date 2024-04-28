@@ -95,7 +95,7 @@ const TouristSpotDetails = () => {
             <p className="text-xl mt-3 ml-2 dark:text-gray-600">
               {short_description}
             </p>
-            <div className="flex justify-between flex-wrap items-center font-bold text-base md:text-xl my-4 dark:text-gray-600 md:px-4 uppercase">
+            <div className="flex justify-around flex-wrap gap-2 items-center font-bold text-base md:text-xl my-4 dark:text-gray-600 md:px-4 uppercase">
               <p className="flex items-center gap-1">
                 <HiHomeModern />
                 {seasonality} Season

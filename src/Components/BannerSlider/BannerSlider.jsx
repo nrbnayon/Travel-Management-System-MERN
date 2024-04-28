@@ -75,20 +75,20 @@ export default function BannerSlider() {
           </div>
         </SwiperSlide>
       </Swiper>
-      <div className="absolute text-white inset-0 flex items-center justify-center w-full h-full  z-10">
+      <div className="absolute text-white  inset-0 flex items-center justify-center md:w-[80%] mx-auto h-full  z-[2]">
         <div className="mx-auto  p-5 rounded-lg">
           <h3 className="text-center text-lg md:text-3xl lg:text-5xl font-bold uppercase">
             Explore Your Destination
           </h3>
-          <p className="text-black w-[90%] text-center mx-auto text-sm md:text-xl">
+          <p className="text-black w-[90%] bg-gray-300 rounded-md bg-opacity-70 text-center mx-auto text-sm md:text-xl">
             Plan your dream vacation with Euro Travel. Discover new horizons and
             create lasting memories with our curated travel experiences.
           </p>
-          <div className="mt-4 text-[#131318] bg-gray-400 rounded-lg shadow-lg">
+          <div className="mt-4 text-[#131318] bg-gray-400 bg-opacity-70 rounded-lg shadow-lg">
             <p className="text-center text-2xl font-bold py-4 bg-gray-200 rounded-t-lg">
               Where to Go
             </p>
-            <div className="flex justify-between flex-col md:flex-row items-center p-4 border border-t-red-200 rounded-b-lg">
+            <div className="flex justify-between  flex-col md:flex-row items-center p-4 border border-t-red-200 rounded-b-lg">
               <div className="w-full mt-4 sm:mt-0">
                 <p className="mb-2 font-semibold">When</p>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>

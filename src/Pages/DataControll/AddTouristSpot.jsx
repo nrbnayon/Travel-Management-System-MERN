@@ -48,7 +48,8 @@ function AddTouristSpot() {
 
       toast.success("Post successful!");
 
-      setFormData({
+      setFormData((newData) => ({
+        ...newData,
         image: "",
         tourists_spot_name: "",
         country_Name: "",
@@ -58,13 +59,7 @@ function AddTouristSpot() {
         seasonality: "",
         travel_time: "",
         totalVisitorsPerYear: "",
-        userEmail: `${
-          user?.email
-            ? user?.email
-            : "Google or Github Account Gmail for Security Purpose"
-        }`,
-        userName: `${user?.displayName}`,
-      });
+      }));
     } catch (error) {
       console.error("Error posting data:", error);
       toast.error("Failed to post data.");
