@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import LoaderSpinner from "../../Components/LoaderSpinner/LoaderSpinner";
+import { Fade, Slide } from "react-awesome-reveal";
 
 const Spot = ({ spot }) => {
   const navigation = useNavigation();
@@ -54,22 +55,27 @@ const Spot = ({ spot }) => {
         </div>
 
         <div className="p-2 space-y-2">
-          <h3
-            className="text-xl font-semibold group-hover:underline group-focus:underline"
-            data-aos="fade-down"
-            data-aos-delay="100"
-            data-aos-duration="1000"
-          >
-            {tourists_spot_name}, {country_Name}
-          </h3>
-          <span
+          <Slide>
+            <h3
+              className="text-xl font-semibold group-hover:underline group-focus:underline"
+              data-aos="fade-down"
+              data-aos-delay="100"
+              data-aos-duration="1000"
+            >
+              {tourists_spot_name}, {country_Name}
+            </h3>
+          </Slide>
+          <Fade
+            delay={1e3}
+            cascade
+            damping={1e-1}
             className="text-xs dark:text-gray-600"
             data-aos="fade-up"
             data-aos-delay="200"
             data-aos-duration="3000"
           >
             {short_description.slice(0, 100)}...
-          </span>
+          </Fade>
           <div className="flex justify-between items-center font-bold text-xs dark:text-gray-600">
             <p
               className="flex items-center gap-1"
@@ -102,7 +108,10 @@ const Spot = ({ spot }) => {
           data-aos-easing="ease-out-cubic"
           data-aos-duration="1000"
         >
-          <Link to={`/touristspotdetails/${_id}`} state={spot.estate_title}>
+          <Link
+            to={`/touristspotdetails/${_id}`}
+            state={spot.tourists_spot_name}
+          >
             <button className="btn btn-outline w-full border-primary uppercase">
               View Details
             </button>

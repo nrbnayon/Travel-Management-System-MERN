@@ -5,11 +5,11 @@ import "aos/dist/aos.css";
 import BannerSlider from "../../Components/BannerSlider/BannerSlider";
 import Description from "../../Components/Home/Description";
 import PopularSpots from "../../Components/Cards/PopularSpots";
-import OurRegion from "../../Components/Home/OurRegion";
 import OurService from "../../Components/Home/OurService";
 import AboutUs from "../AboutUs/AboutUs";
 import ContactForm from "../ContactForm/ContactForm";
 import EpecialOffer from "../../Components/Cards/EpecialOffer";
+import CountryCard from "../../Components/Home/CountryCard";
 
 const Home = () => {
   useEffect(() => {
@@ -64,7 +64,7 @@ const Home = () => {
         <PopularSpots spots={spots} />
       </div>
       <div data-aos="fade-left" data-aos-delay="400" data-aos-duration="1000">
-        <OurRegion />
+        <CountryCard />
       </div>
       <div data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
         <OurService />

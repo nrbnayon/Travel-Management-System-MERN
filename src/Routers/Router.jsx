@@ -12,6 +12,7 @@ import Contact from "../Components/Home/Contact";
 import AddTouristSpot from "../Pages/DataControll/AddTouristSpot";
 import TouristSpotDetails from "../Components/Cards/TouristSpotDetails";
 import SpotUpdate from "../Pages/DataControll/SpotUpdate";
+import CountryPage from "../Components/Home/CountryPage";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,12 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+
+      {
+        path: "/countries/:countryName",
+        element: <CountryPage />,
+        loader: () => fetch("http://localhost:3000/spots"),
       },
       {
         path: "/services",

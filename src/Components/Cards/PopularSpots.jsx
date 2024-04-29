@@ -9,7 +9,7 @@ const PopularSpots = ({ spots }) => {
       {spots.slice(2, 8).map((spot) => (
         <div
           key={spot._id}
-          className="bg-blue-gray-200 max-w-sm rounded-lg overflow-hidden shadow-lg border hover:border-primary"
+          className="bg-gray-200 max-w-sm rounded-lg overflow-hidden shadow-lg border hover:border-primary"
         >
           <img
             src={spot.image}

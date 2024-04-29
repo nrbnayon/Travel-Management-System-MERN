@@ -85,6 +85,7 @@ const UserProfile = () => {
                   <p>Average Cost: {spot.average_cost}</p>
                   <Link
                     to={`/touristspotdetails/${spot._id}`}
+                    state={spot.tourists_spot_name}
                     className="relative inline-block text-lg group mr-2"
                   >
                     <span className="relative text-center z-[1] block px-5 py-3 overflow-hidden font-bold leading-tight text-black transition-colors duration-300 ease-out border-2 border-secondary rounded-lg group-hover:text-white">
@@ -101,6 +102,7 @@ const UserProfile = () => {
                   </Link>
                   <Link
                     to={`/spotupdate/${spot._id}`}
+                    state={spot.tourists_spot_name}
                     className="text-lg w-full btn border-secondary group mr-2 flex justify-center items-center"
                   >
                     <FiEdit />
