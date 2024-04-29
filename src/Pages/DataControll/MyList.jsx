@@ -30,7 +30,7 @@ const UserProfile = () => {
       if (willDelete) {
         try {
           const response = await fetch(
-            `https://euro-tour-server-hk1m1ayqu-nrbnayons-projects.vercel.app/spots/${id}`,
+            `https://euro-tour-server.vercel.app/spots/${id}`,
             {
               method: "DELETE",
               headers: {

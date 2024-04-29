@@ -59,7 +59,7 @@ const Register = () => {
 
       const user = { username, email, photourl };
       const response = await fetch(
-        "https://euro-tour-server-hk1m1ayqu-nrbnayons-projects.vercel.app/users",
+        "https://euro-tour-server.vercel.app/users",
         {
           method: "POST",
           headers: {

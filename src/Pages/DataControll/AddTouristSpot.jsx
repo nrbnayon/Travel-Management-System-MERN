@@ -35,7 +35,7 @@ function AddTouristSpot() {
 
     try {
       const response = await fetch(
-        "https://euro-tour-server-hk1m1ayqu-nrbnayons-projects.vercel.app/spots",
+        "https://euro-tour-server.vercel.app/spots",
         {
           method: "POST",
           headers: {

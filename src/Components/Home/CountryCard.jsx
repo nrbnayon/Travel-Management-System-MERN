@@ -7,9 +7,7 @@ const CountryCard = () => {
   const [countries, setCountries] = useState([]);
 
   useEffect(() => {
-    fetch(
-      "https://euro-tour-server-hk1m1ayqu-nrbnayons-projects.vercel.app/countries"
-    )
+    fetch("https://euro-tour-server.vercel.app/countries")
       .then((res) => res.json())
       .then((data) => setCountries(data));
   }, []);
