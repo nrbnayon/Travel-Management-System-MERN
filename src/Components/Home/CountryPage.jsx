@@ -18,7 +18,7 @@ const CountryPage = () => {
   }, [countryName, spots]);
 
   return (
-    <div>
+    <div className="my-6">
       {filteredSpots.length > 0 ? (
         <div>
           <div className="bg-gray-100 p-6 rounded-lg mb-6 text-center my-4">
@@ -110,7 +110,7 @@ const CountryPage = () => {
           </div>
         </div>
       ) : (
-        <div className="text-center">
+        <div className="flex flex-col justify-center items-center h-60">
           <h3 className="text-2xl font-bold mb-2">
             No data found for {countryName}
           </h3>

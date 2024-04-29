@@ -23,12 +23,18 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:3000/spots"),
+        loader: () =>
+          fetch(
+            "https://euro-tour-server-hk1m1ayqu-nrbnayons-projects.vercel.app/spots"
+          ),
       },
       {
         path: "/touristspots",
         element: <TouristSpots />,
-        loader: () => fetch("http://localhost:3000/spots"),
+        loader: () =>
+          fetch(
+            "https://euro-tour-server-hk1m1ayqu-nrbnayons-projects.vercel.app/spots"
+          ),
       },
       {
         path: "/login",
@@ -42,7 +48,10 @@ const router = createBrowserRouter([
       {
         path: "/countries/:countryName",
         element: <CountryPage />,
-        loader: () => fetch("http://localhost:3000/spots"),
+        loader: () =>
+          fetch(
+            "https://euro-tour-server-hk1m1ayqu-nrbnayons-projects.vercel.app/spots"
+          ),
       },
       {
         path: "/services",
@@ -58,7 +67,10 @@ const router = createBrowserRouter([
       },
       {
         path: "/mylist",
-        loader: () => fetch("http://localhost:3000/spots"),
+        loader: () =>
+          fetch(
+            "https://euro-tour-server-hk1m1ayqu-nrbnayons-projects.vercel.app/spots"
+          ),
         element: (
           <PrivateRouter>
             <UserProfile />
@@ -68,7 +80,9 @@ const router = createBrowserRouter([
       {
         path: "/spotupdate/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/spots/${params.id}`),
+          fetch(
+            `https://euro-tour-server-hk1m1ayqu-nrbnayons-projects.vercel.app/spots/${params.id}`
+          ),
         element: (
           <PrivateRouter>
             <SpotUpdate />
@@ -86,7 +100,9 @@ const router = createBrowserRouter([
       {
         path: "/touristspotdetails/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/spots/${params.id}`),
+          fetch(
+            `https://euro-tour-server-hk1m1ayqu-nrbnayons-projects.vercel.app/spots/${params.id}`
+          ),
         element: (
           <PrivateRouter>
             <TouristSpotDetails />

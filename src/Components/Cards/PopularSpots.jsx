@@ -4,9 +4,11 @@ import { FaMapMarkerAlt, FaDisease } from "react-icons/fa";
 import { GrMapLocation } from "react-icons/gr";
 
 const PopularSpots = ({ spots }) => {
+  const shuffledSpots = spots.sort(() => Math.random() - 0.5);
+  const selectedSpots = shuffledSpots.slice(0, 6);
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4  p-1 rounded-lg">
-      {spots.slice(2, 8).map((spot) => (
+      {selectedSpots.map((spot) => (
         <div
           key={spot._id}
           className="bg-gray-200 max-w-sm rounded-lg overflow-hidden shadow-lg border hover:border-primary"
@@ -16,7 +18,7 @@ const PopularSpots = ({ spots }) => {
             alt={spot.tourists_spot_name}
             className="h-64 w-full object-cover"
           />
-          <div className="px-6 py-4">
+          <div className="px-4 py-2">
             <div className="font-bold text-xl mb-2 text-blue-600">
               {spot.tourists_spot_name}, {spot.country_Name}
             </div>
@@ -30,16 +32,16 @@ const PopularSpots = ({ spots }) => {
                 {spot.seasonality} Season
               </div>
             </div>
-            <p className="text-gray-700 text-base">
-              {spot.short_description.slice(0, 100)}...
+            <p className="text-gray-700 text-base px-4">
+              {spot.short_description.slice(0, 70)}...
             </p>
           </div>
-          <div className="px-6 py-2">
+          <div className="px-4 py-1">
             <p className="text-lg font-bold text-center text-gray-800 mr-4">
               Total Visitor Per Year: {spot.totalVisitorsPerYear}
             </p>
           </div>
-          <div className="px-6 py-2 flex flex-wrap justify-around text-gray-800">
+          <div className="px-4 py-1 flex flex-wrap justify-around text-gray-800">
             <p className="font-semibold  mr-4">
               Average Cost: ${spot.average_cost}
             </p>
@@ -47,7 +49,7 @@ const PopularSpots = ({ spots }) => {
               <GrMapLocation /> {spot.travel_time} Days In {spot.location}
             </p>
           </div>
-          <div className="px-6 py-4 w-full">
+          <div className="px-4 w-full">
             <Link
               to={`/touristspotdetails/${spot._id}`}
               state={spot.tourists_spot_name}

@@ -35,7 +35,7 @@ const SpotUpdate = () => {
     userEmail: `${
       user?.email
         ? user?.email
-        : "Google or Github Account Gmail for Security Purpose"
+        : "Google or Github Account Gmail Hidden for Security Purpose"
     }`,
     userName: `${user?.displayName}`,
     latitude: `${latitude}`,
@@ -52,13 +52,16 @@ const SpotUpdate = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`http://localhost:3000/spots/${_id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(updateFormData),
-      });
+      const response = await fetch(
+        `https://euro-tour-server-hk1m1ayqu-nrbnayons-projects.vercel.app/spots/${_id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updateFormData),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to update post data.");
@@ -129,9 +132,7 @@ const SpotUpdate = () => {
               defaultValue={updateFormData.country_Name}
               onChange={handleChange}
             >
-              <option value="" hidden>
-                Select Country
-              </option>
+              <option hidden>Select Country</option>
               <option value="France">France</option>
               <option value="Italy">Italy</option>
               <option value="Spain">Spain</option>
@@ -185,7 +186,7 @@ const SpotUpdate = () => {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="average_cost"
               type="number"
-              min="0"
+              min="1"
               name="average_cost"
               value={updateFormData.average_cost}
               onChange={handleChange}

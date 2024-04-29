@@ -58,13 +58,16 @@ const Register = () => {
       });
 
       const user = { username, email, photourl };
-      const response = await fetch("http://localhost:3000/users", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(user),
-      });
+      const response = await fetch(
+        "https://euro-tour-server-hk1m1ayqu-nrbnayons-projects.vercel.app/users",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(user),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to register user.");

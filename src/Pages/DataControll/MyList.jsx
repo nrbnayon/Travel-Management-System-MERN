@@ -29,12 +29,15 @@ const UserProfile = () => {
     }).then(async (willDelete) => {
       if (willDelete) {
         try {
-          const response = await fetch(`http://localhost:3000/spots/${id}`, {
-            method: "DELETE",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          });
+          const response = await fetch(
+            `https://euro-tour-server-hk1m1ayqu-nrbnayons-projects.vercel.app/spots/${id}`,
+            {
+              method: "DELETE",
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          );
 
           if (!response.ok) {
             throw new Error("Failed to delete spot.");

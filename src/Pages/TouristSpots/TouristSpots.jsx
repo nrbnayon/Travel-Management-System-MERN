@@ -37,7 +37,7 @@ const TouristSpots = () => {
   }
 
   return (
-    <div className="overflow-x-hidden overflow-y-hidden">
+    <div className="overflow-hidden">
       <div className="text-center mt-4">
         <Fade
           delay={1000}

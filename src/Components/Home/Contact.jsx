@@ -2,6 +2,7 @@ import { MdAddIcCall, MdOutlineMessage } from "react-icons/md";
 import Imgs from "../../assets/Images/abt.png";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import ContactForm from "../../Pages/ContactForm/ContactForm";
+import AboutUs from "./../../Pages/AboutUs/AboutUs";
 const Contact = () => {
   return (
     <div>
@@ -98,6 +99,7 @@ const Contact = () => {
         </div>
       </div>
       <ContactForm />
+      <AboutUs />
     </div>
   );
 };

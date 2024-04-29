@@ -35,7 +35,7 @@ const Home = () => {
 
   const spots = useLoaderData();
   return (
-    <div className="overflow-x-hidden overflow-y-hidden">
+    <div className="overflow-hidden ">
       <div data-aos="fade-down" data-aos-delay="100" data-aos-duration="1000">
         <BannerSlider />
       </div>

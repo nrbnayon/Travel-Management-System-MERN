@@ -10,14 +10,14 @@ function AddTouristSpot() {
     country_Name: "",
     location: "",
     short_description: "",
-    average_cost: "",
+    average_cost: 0,
     seasonality: "",
-    travel_time: "",
+    travel_time: 0,
     totalVisitorsPerYear: "",
     userEmail: `${
       user?.email
         ? user?.email
-        : "Google or Github Account Gmail for Security Purpose"
+        : "Google or Github Account Gmail Hidden for Security Purpose"
     }`,
     userName: `${user?.displayName}`,
     latitude: `${Math.random() * 180 - 90}`,
@@ -34,13 +34,16 @@ function AddTouristSpot() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3000/spots", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://euro-tour-server-hk1m1ayqu-nrbnayons-projects.vercel.app/spots",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to post data.");
@@ -181,7 +184,7 @@ function AddTouristSpot() {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="average_cost"
               type="number"
-              min="0"
+              min="1"
               name="average_cost"
               value={formData.average_cost}
               onChange={handleChange}
@@ -200,9 +203,7 @@ function AddTouristSpot() {
               defaultValue={formData.seasonality}
               onChange={handleChange}
             >
-              <option value="" hidden>
-                Select Seasonality
-              </option>
+              <option hidden>Select Seasonality</option>
               <option value="Summer">Summer</option>
               <option value="Winter">Winter</option>
             </select>

@@ -25,6 +25,8 @@ import {
 import { Link } from "react-router-dom";
 
 const EpecialOffer = ({ spots }) => {
+  const shuffledSpots = spots.sort(() => Math.random() - 0.5);
+  const selectedSpots = shuffledSpots.slice(0, 5);
   return (
     <>
       <section>
@@ -63,7 +65,7 @@ const EpecialOffer = ({ spots }) => {
         }}
         className="mySwiper swipers overflow-y-hidden"
       >
-        {spots.map((spot) => (
+        {selectedSpots.map((spot) => (
           <SwiperSlide key={spot._id} className="swiper-slides">
             <Card className="w-full shadow-lg">
               <CardHeader floated={false} color="blue-gray">
@@ -107,7 +109,7 @@ const EpecialOffer = ({ spots }) => {
                   </Typography>
                 </div>
                 <Typography color="gray" className="text-xs md:text-xl">
-                  {spot.short_description.slice(0, 100)}...
+                  {spot.short_description.slice(0, 70)}...
                 </Typography>
                 <div className="bg-gray-100 p-6 rounded-lg shadow-md flex  items-center justify-between">
                   <div className="flex flex-col md:flex-row">
