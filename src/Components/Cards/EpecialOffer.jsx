@@ -63,11 +63,11 @@ const EpecialOffer = ({ spots }) => {
           modifier: 1,
           slideShadows: true,
         }}
-        className="mySwiper swipers overflow-y-hidden"
+        className="mySwiper swipers overflow-y-hidden py-2"
       >
         {selectedSpots.map((spot) => (
-          <SwiperSlide key={spot._id} className="swiper-slides">
-            <Card className="w-full shadow-lg">
+          <SwiperSlide key={spot._id} className="swiper-slides py-4">
+            <Card className="w-full shadow-lg py-4">
               <CardHeader floated={false} color="blue-gray">
                 <div className="h-72 w-full overflow-hidden">
                   <img src={spot.image} className="h-full w-full " />

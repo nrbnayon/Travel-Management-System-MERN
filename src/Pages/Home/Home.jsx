@@ -39,12 +39,7 @@ const Home = () => {
       <div data-aos="fade-down" data-aos-delay="100" data-aos-duration="1000">
         <BannerSlider />
       </div>
-      <div
-        data-aos="zoom-out"
-        data-aos-delay="700"
-        data-aos-duration="1000"
-        className="mt-4"
-      >
+      <div data-aos="zoom-out" data-aos-delay="700" data-aos-duration="1000">
         <EpecialOffer spots={spots} />
       </div>
       <div

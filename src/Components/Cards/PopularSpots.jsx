@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { FaMapMarkerAlt, FaDisease } from "react-icons/fa";
-import { GrMapLocation } from "react-icons/gr";
+import { CiCalendarDate } from "react-icons/ci";
 
 const PopularSpots = ({ spots }) => {
   const shuffledSpots = spots.sort(() => Math.random() - 0.5);
@@ -11,7 +11,7 @@ const PopularSpots = ({ spots }) => {
       {selectedSpots.map((spot) => (
         <div
           key={spot._id}
-          className="bg-gray-200 max-w-sm rounded-lg overflow-hidden shadow-lg border hover:border-primary"
+          className="bg-gray-200 max-w-sm pb-2 rounded-lg overflow-hidden shadow-lg border hover:border-primary"
         >
           <img
             src={spot.image}
@@ -37,16 +37,14 @@ const PopularSpots = ({ spots }) => {
             </p>
           </div>
           <div className="px-4 py-1">
-            <p className="text-lg font-bold text-center text-gray-800 mr-4">
-              Total Visitor Per Year: {spot.totalVisitorsPerYear}
+            <p className="text-base font-bold text-center text-gray-800 mr-4">
+              Visitor Per Year: {spot.totalVisitorsPerYear}
             </p>
           </div>
-          <div className="px-4 py-1 flex flex-wrap justify-around text-gray-800">
-            <p className="font-semibold  mr-4">
-              Average Cost: ${spot.average_cost}
-            </p>
+          <div className="px-4 py-1 flex flex-wrap justify-around text-gray-800 font-medium">
+            <p className=" mr-4">Average Cost: ${spot.average_cost}</p>
             <p className="flex items-center gap-1">
-              <GrMapLocation /> {spot.travel_time} Days In {spot.location}
+              <CiCalendarDate /> {spot.travel_time} Days
             </p>
           </div>
           <div className="px-4 w-full">

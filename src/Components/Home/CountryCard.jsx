@@ -27,7 +27,7 @@ const CountryCard = () => {
         {countries.map((country) => (
           <div
             key={country._id}
-            className="relative rounded overflow-hidden shadow-lg"
+            className="relative rounded overflow-hidden shadow-lg  border hover:border-secondary"
           >
             <img
               className="w-full h-64 object-cover"

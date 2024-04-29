@@ -11,9 +11,7 @@ const OurService = () => {
             alt="bgimg"
           />
           <div className="absolute w-2/3 md:w-1/3 mx-auto h-2/3 md:h-1/2 my-auto  inset-0 flex flex-col justify-center space-y-2 text-center bg-[#FFFFFFE0] items-center p-4 rounded-md rounded-br-[50px] rounded-tl-[50px]">
-            <h3 className="text-2xl font-bold text-primary">
-              Explore Europe with Us
-            </h3>
+            <h3 className="text-2xl font-bold text-primary">Explore Europe</h3>
             <p className="text-base font-medium text-secondary">
               Embark on a journey through the heart of Europe, discovering its
               rich culture, breathtaking landscapes, and vibrant cities.

@@ -103,7 +103,7 @@ export default function BannerSlider() {
                 </label>
                 <select
                   name="dropdown"
-                  className="md:w-[80%] mx-auto px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500 dropdown-select"
+                  className="md:w-[80%] mx-auto px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500 dropdown-select bg-inherit"
                   defaultValue="Select Country"
                 >
                   <option value="Select Country" hidden>
