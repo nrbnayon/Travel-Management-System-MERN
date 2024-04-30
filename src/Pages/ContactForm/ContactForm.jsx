@@ -1,13 +1,13 @@
 import FormBG from "../../assets/Logo/wave.svg";
 const ContactForm = () => {
   return (
-    <div className="relative my-6">
+    <div className="relative  my-6">
       <div className="h-[500px]">
         <img src={FormBG} alt="FormBG" className="w-full h-full object-cover" />
       </div>
-      <div className="lg:absolute md:inset-0  lg:w-2/3 mx-auto md:h-1/2 my-auto p-4 ">
-        <div className=" md:p-6 rounded-md flex flex-col md:flex-row gap-2">
-          <div className="bg-[#181D24] lg:w-1/3 p-4 rounded-tl-[50px] rounded-md text-center text-gray-400 text-base font-medium">
+      <div className="absolute inset-0  lg:w-2/3 mx-auto md:h-1/2 my-auto md:p-4 ">
+        <div className=" md:p-6 rounded-md flex flex-col md:flex-row md:gap-2">
+          <div className="bg-[#181D24] lg:w-1/3 p-2 md:p-4 rounded-tl-[50px] rounded-md text-center text-gray-400 text-base font-medium">
             <h3 className="text-xl font-bold mb-4 text-white">
               Let&apos;s Connect
             </h3>
@@ -18,7 +18,7 @@ const ContactForm = () => {
               <br />
               Awal Centre, <br /> Banani, Dhaka
             </p>
-            <div className="space-y-3 ">
+            <div className="md:space-y-3 ">
               <div className="uppercase text-white font-bold underline">
                 Social media
               </div>
@@ -70,7 +70,7 @@ const ContactForm = () => {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-6 gap-4 mt-4 rounded-br-[50px] rounded-lg bg-white  p-4 ">
+          <div className="grid grid-cols-6 gap-4 mt-4 rounded-br-[50px] rounded-lg bg-gray-400 bg-opacity-70 :bg-white  p-4 ">
             <div className="col-span-6 sm:col-span-3">
               <label className="text-sm block mb-1">Name</label>
               <input

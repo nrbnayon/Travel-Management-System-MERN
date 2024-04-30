@@ -87,7 +87,7 @@ const Spot = ({ spot }) => {
               {location}, , {country_Name}
             </p>
             <p data-aos="zoom-in" data-aos-delay="200">
-              Average Cost: {average_cost}
+              Average Cost: $ {average_cost}
             </p>
           </div>
           <div className="flex flex-wrap justify-around">
@@ -98,7 +98,7 @@ const Spot = ({ spot }) => {
               Travel Time: {travel_time} Day
             </p>
             <p data-aos="zoom-in" data-aos-delay="200">
-              Total Visitors Per Year: {totalVisitorsPerYear}
+              Visitors Per Year: {totalVisitorsPerYear}
             </p>
           </div>
         </div>

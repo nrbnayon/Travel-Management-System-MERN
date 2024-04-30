@@ -111,26 +111,26 @@ const EpecialOffer = ({ spots }) => {
                 <Typography color="gray" className="text-xs md:text-xl">
                   {spot.short_description.slice(0, 70)}...
                 </Typography>
-                <div className="bg-gray-100 p-6 rounded-lg shadow-md flex  items-center justify-between">
+                <div className="bg-gray-100 p-2 md:p-6 rounded-lg shadow-md flex  items-center justify-between">
                   <div className="flex flex-col md:flex-row">
                     <div className="md:mr-8">
-                      <p className="text-lg font-bold text-gray-800">
+                      <p className="text-base font-bold text-gray-800">
                         Average Cost:
                         <del className="text-red-600">
                           {" "}
                           ${spot.average_cost}
                         </del>
                       </p>
-                      <p className="text-lg font-bold text-gray-800">
+                      <p className="text-base font-bold text-gray-800">
                         Discount:
                         <span className="text-green-600"> 20%</span>
                       </p>
                     </div>
                     <div>
-                      <p className="text-lg font-bold text-gray-800">
-                        Per Year Views: {spot.totalVisitorsPerYear}
+                      <p className="text-base font-bold text-gray-800">
+                        Yearly Viewers: {spot.totalVisitorsPerYear}
                       </p>
-                      <p className="text-lg font-bold text-gray-800">
+                      <p className="text-base font-bold text-gray-800 mr-1">
                         Popular Season:
                         <span className="text-green-600">
                           {spot.seasonality}

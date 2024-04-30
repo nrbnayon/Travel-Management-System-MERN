@@ -1,25 +1,25 @@
 const ServiceTeam = () => {
   const teamMembers = [
     {
-      name: "John Doe",
+      name: "Mr. Nayon",
       position: "CEO",
-      image: "https://via.placeholder.com/150",
+      image: "https://i.ibb.co/2Kc9k00/u1.jpg ",
       description:
-        "John is responsible for overseeing the overall operations and strategic direction of our company.",
+        "Nayon is responsible for overseeing the overall operations and strategic direction of our company.",
     },
     {
-      name: "Jane Smith",
+      name: "Adi",
       position: "Marketing Manager",
-      image: "https://via.placeholder.com/150",
+      image: " https://i.ibb.co/wzrTmnd/u3.jpg",
       description:
-        "Jane leads our marketing efforts, including branding, advertising, and market research.",
+        "Adi leads our marketing efforts, including branding, advertising, and market research.",
     },
     {
-      name: "Mike Johnson",
+      name: "SB Roy",
       position: "Sales Manager",
-      image: "https://via.placeholder.com/150",
+      image: "https://i.ibb.co/D8wD9wc/u3.jpg",
       description:
-        "Mike manages our sales team and develops strategies to drive revenue growth and customer acquisition.",
+        "SB manages our sales team and develops strategies to drive revenue growth and customer acquisition.",
     },
   ];
 

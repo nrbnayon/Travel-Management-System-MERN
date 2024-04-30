@@ -24,7 +24,7 @@ export default function BannerSlider() {
   }, []);
 
   return (
-    <div className="relative min-h-screen md:h-auto">
+    <div className="relative md:h-[600px] rounded">
       <Swiper
         className="swiper mySwiper"
         spaceBetween={30}
@@ -39,39 +39,43 @@ export default function BannerSlider() {
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
       >
-        <SwiperSlide className="swiper-slide">
-          <div className="relative" data-aos="fade-right" data-aos-delay="100">
-            <img src={Slider1} className=" rounded-br-3xl opacity-90" />
+        <SwiperSlide className="swiper-slide h-full w-full">
+          <div
+            className="relative h-full w-full"
+            data-aos="fade-right"
+            data-aos-delay="100"
+          >
+            <img src={Slider1} className=" rounded-br-3xl h-full w-full" />
           </div>
         </SwiperSlide>
-        <SwiperSlide className="swiper-slide">
+        <SwiperSlide className="swiper-slide  h-full w-full">
           <div
-            className="relative"
+            className="relative h-full w-full"
             data-aos="fade-left"
             data-aos-delay="600"
             data-aos-anchor="#anchor2"
           >
-            <img src={Slider2} className="rounded-br-3xl opacity-90" />
+            <img src={Slider2} className="rounded-br-3xl h-full w-full" />
           </div>
         </SwiperSlide>
-        <SwiperSlide className="swiper-slide">
+        <SwiperSlide className="swiper-slide h-full w-full">
           <div
-            className="relative"
+            className="relative h-full w-full"
             data-aos="fade-up"
             data-aos-delay="500"
             data-aos-anchor="#anchor3"
           >
-            <img src={Slider3} className="rounded-br-3xl opacity-90" />
+            <img src={Slider3} className="rounded-br-3xl h-full w-full" />
           </div>
         </SwiperSlide>
-        <SwiperSlide className="swiper-slide">
+        <SwiperSlide className="swiper-slide h-full w-full">
           <div
-            className="relative "
+            className="relative h-full w-full "
             data-aos="fade-down"
             data-aos-delay="500"
             data-aos-anchor="#anchor3"
           >
-            <img src={Slider4} className="rounded-br-3xl opacity-90" />
+            <img src={Slider4} className="rounded-br-3xl h-full w-full" />
           </div>
         </SwiperSlide>
       </Swiper>
@@ -80,11 +84,11 @@ export default function BannerSlider() {
           <h3 className="text-center text-lg md:text-3xl lg:text-5xl font-bold uppercase">
             Explore Your Destination
           </h3>
-          <p className="text-black w-[90%] bg-gray-300 rounded-md bg-opacity-70 text-center mx-auto text-sm md:text-xl">
+          <p className="md:text-black w-[90%] md:bg-gray-300 rounded-md bg-opacity-70 text-center mx-auto text-sm md:text-xl">
             Plan your dream vacation with Euro Travel. Discover new horizons and
             create lasting memories with our curated travel experiences.
           </p>
-          <div className="mt-4 text-[#131318] bg-gray-400 bg-opacity-70 rounded-lg shadow-lg">
+          <div className="hidden md:block mt-4 text-[#131318] bg-gray-400 bg-opacity-70 rounded-lg shadow-lg">
             <p className="text-center text-2xl font-bold py-4 bg-gray-200 rounded-t-lg">
               Where to Go
             </p>
