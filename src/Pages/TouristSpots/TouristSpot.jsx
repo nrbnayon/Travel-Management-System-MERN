@@ -47,7 +47,7 @@ const Spot = ({ spot }) => {
           />
           <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " />
           <p className="absolute top-1 left-2 bg-white text-black px-2 py-1 rounded-md uppercase">
-            {tourists_spot_name}
+            {location}
           </p>
           <div className="absolute top-3 right-3 text-2xl text-red-500">
             <FaShieldHeart />
@@ -74,7 +74,7 @@ const Spot = ({ spot }) => {
             data-aos-delay="200"
             data-aos-duration="3000"
           >
-            {short_description.slice(0, 100)}...
+            <p>{short_description.slice(0, 80)}...</p>
           </Fade>
           <div className="flex justify-between items-center font-bold text-xs dark:text-gray-600">
             <p

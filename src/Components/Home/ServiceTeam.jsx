@@ -17,7 +17,7 @@ const ServiceTeam = () => {
     {
       name: "SB Roy",
       position: "Sales Manager",
-      image: "https://i.ibb.co/D8wD9wc/u3.jpg",
+      image: "https://i.ibb.co/dfbR9qm/u2.jpg",
       description:
         "SB manages our sales team and develops strategies to drive revenue growth and customer acquisition.",
     },
