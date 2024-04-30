@@ -6,6 +6,8 @@ Welcome to Euro Travel, your ultimate destination for exploring Europe's finest 
 
 [Visit Euro Travel](https://euro-travel2.netlify.app/)
 
+## Selected Category: Europe
+
 ## Description
 
 Euro Travel is a tourism management website focusing on six different countries in Europe: France, Italy, Spain, England, Netherlands, and Switzerland. The website provides a comprehensive platform for users to discover tourist spots, add new spots, manage their lists, and explore various destinations across Europe.
@@ -34,7 +36,7 @@ Euro Travel is a tourism management website focusing on six different countries 
 - React.js
 - Firebase Authentication
 - React Router
-- React Bootstrap
+- Tailwind
 - Netlify for deployment
 
 ## Packages Used
