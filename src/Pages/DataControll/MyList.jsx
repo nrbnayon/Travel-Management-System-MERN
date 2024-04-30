@@ -6,7 +6,7 @@ import { MdRemoveRedEye } from "react-icons/md";
 import swal from "sweetalert";
 import { toast } from "react-toastify";
 
-const UserProfile = () => {
+const MyList = () => {
   const spotsData = useLoaderData();
   const { user } = useContext(AuthContext);
   const [filteredSpots, setFilteredSpots] = useState([]);
@@ -128,4 +128,4 @@ const UserProfile = () => {
   );
 };
 
-export default UserProfile;
+export default MyList;

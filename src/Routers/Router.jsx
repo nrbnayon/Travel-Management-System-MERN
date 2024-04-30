@@ -6,7 +6,7 @@ import Home from "../Pages/Home/Home";
 import NotFound from "../Pages/NotFound/NotFound";
 import TouristSpots from "../Pages/TouristSpots/TouristSpots";
 import PrivateRouter from "./PrivateRouter";
-import UserProfile from "../Pages/DataControll/MyList";
+import MyList from "../Pages/DataControll/MyList";
 import Contact from "../Components/Home/Contact";
 import AddTouristSpot from "../Pages/DataControll/AddTouristSpot";
 import TouristSpotDetails from "../Components/Cards/TouristSpotDetails";
@@ -61,7 +61,7 @@ const router = createBrowserRouter([
         loader: () => fetch("https://euro-tour-server.vercel.app/spots"),
         element: (
           <PrivateRouter>
-            <UserProfile />
+            <MyList />
           </PrivateRouter>
         ),
       },
