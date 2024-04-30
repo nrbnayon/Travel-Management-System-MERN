@@ -37,6 +37,33 @@ Euro Travel is a tourism management website focusing on six different countries 
 - React Bootstrap
 - Netlify for deployment
 
+## Packages Used
+
+- @emotion/react
+- @emotion/styled
+- @heroicons/react
+- @material-tailwind/react
+- @mui/material
+- @mui/x-date-pickers
+- animate.css
+- aos
+- dayjs
+- firebase
+- localforage
+- lottie-react
+- prop-types
+- react
+- react-awesome-reveal
+- react-dom
+- react-icons
+- react-leaflet
+- react-loader-spinner
+- react-router-dom
+- react-simple-typewriter
+- react-toastify
+- sweetalert
+- swiper
+
 ## Installation and Usage
 
 To run this project locally, follow these steps:
