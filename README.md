@@ -6,7 +6,7 @@ Welcome to Euro Travel, your ultimate destination for exploring Europe's finest 
 
 [Visit Euro Travel](https://euro-travel2.netlify.app/)
 
-## Selected Category: Europe
+## Selected Europe
 
 ## Description
 
